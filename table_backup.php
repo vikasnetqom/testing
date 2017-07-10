@@ -2,7 +2,7 @@
 $backup_file = 'db-backup-'.time().'.sql';
 
 // get backup
-$mybackup = backup_tables("localhost","root","","test","mirrormx_customer_chat_data");
+$mybackup = backup_tables("localhost","root","","test","*");
 
 // save to file
 $handle = fopen($backup_file,'w+');
@@ -67,56 +67,4 @@ function backup_tables($host, $user, $pass, $name, $tables = '*'){
   mysql_close( $link );
   return $data;
 }
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-/*
-?>
-php tutorial book
-php tutorial online
-php tutorial website
-wordpress php tutorial
-jquery ajax php tutorial
-php tutorial wordpress
-php tutorial website
-what is php framework tutorials
-api in php tutorial
-how to develop a website in php tutorial	
-booking system php tutorial
-php todo list tutorial
-php yii tutorial
-php tutorial free
-php tutorial basic
-<?php
-*/
 ?>
