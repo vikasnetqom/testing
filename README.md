@@ -2,7 +2,6 @@
 mysql database or table backup in php
 
 
-<?php
 include "table_backup.php";
 $backup_file = 'db-backup-'.time().'.sql';
 
@@ -14,4 +13,3 @@ $handle = fopen($backup_file,'w+');
 fwrite($handle,$mybackup);
 fclose($handle);
 
-?>
