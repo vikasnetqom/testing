@@ -1,4 +1,18 @@
 <?php
+include "table_backup.php";
+$backup_file = 'db-backup-'.time().'.sql';
+
+// get backup
+$mybackup = backup_tables("localhost","root","","test","*");
+
+// save to file
+$handle = fopen($backup_file,'w+');
+fwrite($handle,$mybackup);
+fclose($handle);
+
+?>
+
+<?php
 function backup_tables($host, $user, $pass, $name, $tables = '*'){
   $data = "\n/*---------------------------------------------------------------".
           "\n  SQL DB BACKUP ".date("d.m.Y H:i")." ".
